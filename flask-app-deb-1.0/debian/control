@@ -1,0 +1,15 @@
+Source: flask-app-deb
+Section: unknown
+Priority: optional
+Maintainer: Avijit Sen <avijit69@unknown>
+Build-Depends: debhelper-compat (= 12) , python, python-flask
+Standards-Version: 4.4.1
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/flask-app-deb
+#Vcs-Git: https://salsa.debian.org/debian/flask-app-deb.git
+
+Package: flask-app-deb
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: This is a Flask application
+ This is a Flask application

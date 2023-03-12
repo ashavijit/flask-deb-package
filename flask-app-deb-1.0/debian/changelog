@@ -1,0 +1,5 @@
+flask-app-deb (1.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Avijit Sen <avijit69@unknown>  Sun, 12 Mar 2023 14:36:47 +0530
