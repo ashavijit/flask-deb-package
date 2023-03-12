@@ -237,6 +237,67 @@ usr/local/myflaskapp/README.md usr/share/doc/myflaskapp
 touch DEBIAN/myflaskapp.docs
 
 
+# Run the following command to create the deb package
 
+debuild -us -uc
 
+# The deb package will be created in the parent directory
+
+```
+
+### Step 2: Install the deb package
+
+```bash
+# Install the deb package
+
+sudo dpkg -i ../myflaskapp_1.0.0_all.deb
+
+# Check the status of the service
+
+sudo systemctl status myflaskapp
+
+# Check the logs of the service
+
+sudo journalctl -u myflaskapp
+
+# Access the flask app
+
+curl http://localhost:8080
+
+# Stop the service
+
+sudo systemctl stop myflaskapp
+
+# Start the service
+
+sudo systemctl start myflaskapp
+
+# Restart the service
+
+sudo systemctl restart myflaskapp
+
+# Uninstall the deb package
+
+sudo dpkg -r myflaskapp
+
+```
+
+## Checkout My deb Package(generated using the above steps)
+
+[myflaskapp_1.0.0_all.deb](/flask-app-deb_1.0-1_amd64.deb) (3.1 KB)
+[myflaskapp_1.0.0.dsc](/flask-app-deb_1.0-1.dsc) (1.1 KB)
+[myflaskapp_1.0.0.tar.gz](/flask-app-deb_1.0.orig.tar.gz) (1.1 KB)
+
+## Screenshots
+![myflaskapp](/images/1.png)
+![myflaskapp](/images/2.png)
+![myflaskapp](/images/3.png)
+
+## References
+
+[https://www.debian.org/doc/manuals/maint-guide/](https://www.debian.org/doc/manuals/maint-guide/)
+
+[https://www.debian.org/doc/manuals/maint-guide/dreq.en.html](https://www.debian.org/doc/manuals/maint-guide/dreq.en.html)
+
+[https://www.debian.org/doc/manuals/maint-guide/dreq.en.html#control](https://www.debian.org/doc/manuals/maint-guide/dreq.en.html#control)
 
