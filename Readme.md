@@ -1,7 +1,7 @@
 # Ubuntu/Debian deb package for better installation of any software
 
 ## Lets take a sample flask app
-theme:minima
+
 ```python
 from flask import Flask
 import datetime
