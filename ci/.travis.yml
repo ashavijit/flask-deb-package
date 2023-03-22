@@ -13,21 +13,23 @@ install :
 #build package
     python build_package.py
 
-#deploy package
+#deploy package to test to build/test folder
 
 deploy : 
-  provider :  pypi
-  user :  $PYPI_USER
-  password :  $PYPI_PASSWORD
-  on : 
-    branch :  master
-
-#deploy package to test pypi
+    provider : releases
+    api_key : $GITHUB_TOKEN
+    file : dist/test/*.tar.gz
+    skip_cleanup : true
+    on : 
+      tags : true
+#deploy to build folder
 
 deploy : 
-  provider :  pypi
-  user :  $TEST_PYPI_USER
-  password :  $TEST_PYPI_PASSWORD
+  provider :  releases
+  api_key :  $GITHUB_TOKEN
+  file :  dist/*.tar.gz
+  skip_cleanup :  true
   on : 
-    branch :  develop
+    tags :  true
+
 
