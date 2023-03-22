@@ -1,0 +1,33 @@
+language : python 3.9
+
+#schedule cron job in every month
+
+cron : 
+  -  "0 0 1 * *"
+
+#install dependencies
+
+install : 
+  -  pip install -r requirements.txt
+
+#build package
+    python build_package.py
+
+#deploy package
+
+deploy : 
+  provider :  pypi
+  user :  $PYPI_USER
+  password :  $PYPI_PASSWORD
+  on : 
+    branch :  master
+
+#deploy package to test pypi
+
+deploy : 
+  provider :  pypi
+  user :  $TEST_PYPI_USER
+  password :  $TEST_PYPI_PASSWORD
+  on : 
+    branch :  develop
+
